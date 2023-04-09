@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main-text-color {
+  background: linear-gradient(90deg, #7e90fe 0%, #9873ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.main-btn-color {
+  background: linear-gradient(90deg, #7e90fe 0%, #9873ff 100%);
+  border-radius: 8px;
+  font-family: 'Manrope';
+font-style: normal;
+font-weight: 800;
+font-size: 20px;
+line-height: 27px;
+
+color: #FFFFFF;
+}
+.my-container {
+  @apply px-4 py-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-6 py-6;
+}
+
+.main-bg{
+  background: linear-gradient(90deg, rgba(126, 144, 254, 0.05) 0%, rgba(152, 115, 255, 0.05) 100%);
+}
