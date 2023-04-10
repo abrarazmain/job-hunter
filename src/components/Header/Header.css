@@ -1,3 +1,17 @@
-.nav{
-    margin-left: 40px;
+.nav {
+  margin-left: 40px;
+}
+.nav-title {
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 44px;
+  color: #1a1919;
+}
+
+.nav-link {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #757575;
 }
