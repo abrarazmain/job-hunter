@@ -1,28 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Home.css";
+import Banner from "../Banner/Banner";
+import { useLoaderData } from "react-router-dom";
+import Category from "../category/Category";
 
 const Home = () => {
+  const { categories } = useLoaderData();
+  console.log(categories);
+
   return (
-    <div className="px-4 py-6 flex justify-center align-middle  mx-auto  sm:max-w-xl md:max-w-full  md:px-24 lg:px-72 py-6 main-bg">
-      <div className="my-auto">
-        <h1 className="banner-title">
-          One Step <br /> Closer To Your{" "}
-          <span className="main-text-color">Dream Job</span>
-        </h1>
-        <p className="banner-des py-4">
-          Explore thousands of job opportunities with all the <br /> information
-          you need. Its your future. Come find it. Manage all <br /> your job
-          application from start to finish.
+    <div>
+      <Banner></Banner>
+      <div className="mt-36 mb-10">
+        <h1 className="category-title">Job Category List</h1>
+        <p className="category-des text-center">
+          Explore thousands of job opportunities with all the information you
+          need. Its your future
         </p>
-        <button className="main-btn-color px-4 py-3">Get Started</button>
+        <div className="category-container grid lg:grid-cols-4 my-container md:grid-cols-2 sm:grid-cols-1">
+          {categories.map((category, i) => (
+            <Category key={i} category={category}></Category>
+          ))}
+        </div>
       </div>
-      <div>
-        <img src="../../../public/All Images/P3OLGJ1 copy 1.png" alt="" />
-          </div>
-          {/* job category */}
-          <div>
-              <h3>Job Category List</h3>
-           </div>
     </div>
   );
 };

@@ -1,0 +1,24 @@
+{
+  "categories": [
+    {
+      "category_logo": "./Icons/accounts 1.png",
+      "category_name": "Account & Finance",
+      "jobs_available": "300 JIb Available"
+    },
+    {
+      "category_logo": "./Icons/business 1.png",
+      "category_name": "Creative Design",
+      "jobs_available": "100+ Job Available"
+    },
+    {
+      "category_logo": "./Icons/social-media 1.png",
+      "category_name": "Marketing & sales",
+      "jobs_available": "150 Job Available"
+    },
+    {
+      "category_logo": "./Icons/chip 1.png",
+      "category_name": "Engineering Job",
+      "jobs_available": "220 Job Available"
+    }
+  ]
+}

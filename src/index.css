@@ -21,7 +21,7 @@ line-height: 27px;
 color: #FFFFFF;
 }
 .my-container {
-  @apply px-4 py-4 mx-auto sm:max-w-xl md:max-w-full  md:px-24 lg:px-12 py-6 lg:max-w-screen-xl;
+  @apply px-4 py-4 mx-auto sm:max-w-xl md:max-w-full  md:px-24 lg:px-12 py-6 lg:max-w-screen-2xl;
 }
 
 .main-bg{

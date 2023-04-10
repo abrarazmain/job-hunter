@@ -1,0 +1,44 @@
+.category-title {
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 66px;
+    text-align: center;
+    color: #1a1919;
+  }
+  
+  .category-des {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    color: #757575;
+  }
+  
+  .category-card {
+    width: 311px;
+    height: 243px;
+  margin: 10px;
+    background: linear-gradient(
+      90deg,
+      rgba(126, 144, 254, 0.05) 0%,
+      rgba(152, 115, 255, 0.05) 100%
+    );
+    border-radius: 8px;
+    padding: 50px 0 50px 40px;
+  }
+  .category-icon-container{
+      width: 70px;
+      height: 70px;
+     
+      
+      background: linear-gradient(90deg, rgba(126, 144, 254, 0.1) 0%, rgba(152, 115, 255, 0.1) 100%);
+      border-radius: 8px;
+  }
+  .category-name{
+      font-weight: 800;
+      font-size: 20px;
+      line-height: 27px;
+      
+      /* Dark 02 */
+      
+      color: #474747;
+  }
