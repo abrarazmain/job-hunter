@@ -3,11 +3,23 @@ import "./Home.css";
 import Banner from "../Banner/Banner";
 import { useLoaderData } from "react-router-dom";
 import Category from "../category/Category";
+import JobCard from "./JobCard/JobCard";
 
 const Home = () => {
   const { categories } = useLoaderData();
   console.log(categories);
+  const [jobs, setJobs] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetch("jobs.json");
+      const jobs = await data.json();
+      setJobs(jobs);
+    };
+    fetchData();
+  }, []);
 
+  const newJobs = jobs.jobs;
+  console.log(newJobs);
   return (
     <div>
       <Banner></Banner>
@@ -29,43 +41,9 @@ const Home = () => {
           Explore thousands of job opportunities with all the information you
           need. Its your future
         </p>
-        <div className="job-container my-container grid grid-cols-2">
-          <div className="job-card">
-            <img
-              className="mt-12 mb-10 job-img"
-              src="../../../public/Logo/netflix-4 1.png"
-              alt=""
-            />
-            <h2 className="job-name">Technical Database Engineer</h2>
-            <p className="job-company">Google LLC</p>
-            <div className=" main-text-color flex gap-4">
-              <div className="job-type">Remote</div>
-              <div className="job-type">Full Time</div>
-            </div>
-            <div className="job-location flex gap-4">
-              <div>Dhaka, Bangladesh</div>
-              <div>Salary : 100K - 150K</div>
-            </div>
-            <button className="job-btn">View Details</button>
-          </div>
-          <div className="job-card">
-            <img
-              className="mt-12 job-img"
-              src="../../../public/Logo/netflix-4 1.png"
-              alt=""
-            />
-            <h2 className="job-name ms-8">Technical Database Engineer</h2>
-            <p className="job-company">Google LLC</p>
-            <div className="job-type main-text-color flex gap-4">
-              <div>Remote</div>
-              <div>Full Time</div>
-            </div>
-            <div className="job-location flex gap-4">
-              <div>Dhaka, Bangladesh</div>
-              <div>Salary : 100K - 150K</div>
-            </div>
-            <button className="job-btn">View Details</button>
-          </div>
+        <div className="job-container my-container grid xl:grid-cols-2 md:grid-cols-1">
+          {newJobs &&
+            newJobs.map((job) => <JobCard key={job.id} job={job}></JobCard>)}
         </div>
       </div>
     </div>

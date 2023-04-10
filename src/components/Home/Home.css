@@ -33,23 +33,20 @@
 .job-img,
 .job-company,
 .job-type,
-.job-location,
+
 .job-btn {
   margin-left: 40px;
+  
 }
-.job-type div {
-  width: 100px;
+.job-type {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  /* background-color: red; */
+  width: 109px;
   height: 40px;
-  left: 340px;
-  top: 1879px;
-  border-radius: 4px;
+  border: 1px solid #7e90fe;
+  border-radius: 8px;
   font-weight: 800;
-font-size: 16px;
-line-height: 22px;
-
-background: linear-gradient(90deg, #7E90FE 0%, #9873FF 100%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
-border: #7E90FE;
+  font-size: 16px;
+  line-height: 22px;
 }
