@@ -6,17 +6,21 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import Main from "./components/Main";
+import ErrorPage from "./components/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement:<ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
         element: <Home></Home>,
-        loader:()=>fetch('category.json')
+        loader: () => fetch("category.json"),
+
       },
+
     ],
   },
 ]);
