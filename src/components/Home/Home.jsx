@@ -7,8 +7,8 @@ import JobCard from "./JobCard/JobCard";
 
 const Home = () => {
   const { categories } = useLoaderData();
-  console.log(categories);
   const [jobs, setJobs] = useState([]);
+
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetch("jobs.json");
@@ -19,7 +19,7 @@ const Home = () => {
   }, []);
 
   const newJobs = jobs.jobs;
-  console.log(newJobs);
+
   return (
     <div>
       <Banner></Banner>

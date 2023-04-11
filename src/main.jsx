@@ -7,20 +7,24 @@ import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import Main from "./components/Main";
 import ErrorPage from "./components/ErrorPage";
+import JobDetails from "./components/jobDetails/JobDetails";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
-    errorElement:<ErrorPage></ErrorPage>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
         element: <Home></Home>,
         loader: () => fetch("category.json"),
-
       },
-
+      {
+        path: "jobs/:jobID",
+        element: <JobDetails></JobDetails>,
+        loader:()=> fetch('jobs.json')
+      },
     ],
   },
 ]);
