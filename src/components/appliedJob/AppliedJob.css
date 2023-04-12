@@ -1,0 +1,21 @@
+.applied-card {
+  width: 1320px;
+  height: 300px;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+}
+.img{
+    width: 240px;
+height: 240px;
+
+
+/* Dark 07 */
+
+background: #F4F4F4;
+border-radius: 8px;
+}
+
+.img img{
+    width: 145.86px;
+height: 50px;
+}

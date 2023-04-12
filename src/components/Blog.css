@@ -1,0 +1,22 @@
+.bold-text{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 27px;
+    
+
+    
+    color: #474747;
+}
+.thin-text{
+    font-weight: 500;
+font-size: 16px;
+line-height: 32px;
+color: #757575;
+}
+
+.test{
+    border: 1px solid #757575 ;
+    background-color: lightblue;
+    padding: 10px 20px 20px 10px;
+    border-radius: 20px;
+}

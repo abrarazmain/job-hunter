@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import "./jobDetails.css";
-import { addToDB, addToDb, addToDb2, getShoppingCart } from "../../fakedb";
+import { addToDB, addToDb, getShoppingCart } from "../../fakedb";
+
 
 // use local storage to manage cart data
-const addToDb3 = id => {
+const addToDb4 = id => {
   let shoppingCart = getShoppingCart();
   // add quantity
   const quantity = shoppingCart[id];
@@ -15,8 +16,9 @@ const addToDb3 = id => {
       const newQuantity = quantity + 1;
       shoppingCart[id] = newQuantity;
   }
-  localStorage.setItem('shopping-cart', JSON.stringify(shoppingCart));
+  localStorage.setItem('applied-job', JSON.stringify(shoppingCart));
 }
+
 
 const JobDetails = () => {
   const { jobID } = useParams();
@@ -99,7 +101,7 @@ const JobDetails = () => {
           </div>
           <div className="flex items-center justify-center">
             <button
-              onClick={() => addToDb3(id)}
+              onClick={() => addToDb4(id)}
               className="main-btn-color px-4 py-2"
             >
               Apply Now

@@ -1,21 +1,35 @@
 import React, { useEffect, useState } from "react";
 import { getShoppingCart } from "../../fakedb";
 import { useLoaderData } from "react-router-dom";
+import AppliedCard from "./AppliedCard";
 
 const AppliedJob = () => {
-  const [jobId, setJobId] = useState([]);
+  const [allJobs, setAllJobs] = useState([]);
+  const [tempAllJobs, setTempAllJobs] = useState([]);
+
+  const loadedData = useLoaderData()
 
   useEffect(() => {
-    let newId = [];
-    const test = localStorage.getItem("applied-job");
-    newId.push(JSON.parse(test));
-    setJobId(newId);
-  }, []);
+    const storedJobs = getShoppingCart()
+    let cartJobs = []
+    if (loadedData) {
+      for (const id in storedJobs) {
+        const addedJobs =loadedData.jobs&& loadedData.jobs.find((job) => job.id == id)
+        cartJobs.push(addedJobs)
+      }
+      setAllJobs([...cartJobs])
+      setTempAllJobs([...cartJobs])
+    }
+  }, [])
+  // console.log(allJobs,tempAllJobs);
 
-  const { jobs } = useLoaderData();
-  console.log(jobs, jobId);
 
-  return <div>hellow</div>;
+
+  return <div>
+    {
+      allJobs.map(job => <AppliedCard job={job}></AppliedCard>)
+}
+  </div>;
 };
 
 export default AppliedJob;

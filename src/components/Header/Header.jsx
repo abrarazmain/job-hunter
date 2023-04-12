@@ -9,7 +9,7 @@ const Header = () => {
       <div className="nav-link">
         <Link to="/charts" className="nav">Statics</Link>
         <Link to='/appliedJob' className="nav">Applied Job</Link>
-        <Link className="nav">Blog</Link>
+        <Link to='/blog' className="nav">Blog</Link>
       </div>
       <div>
         <button className="main-btn-color px-4 py-2">Start Applying</button>
