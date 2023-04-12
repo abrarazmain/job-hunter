@@ -25,8 +25,9 @@ const AppliedJob = () => {
 
   return (
     <div>
-      {allJobs &&
-        allJobs.map((job, i) => <AppliedCard key={i} job={job}></AppliedCard>)}
+      {allJobs.map((job, i) => (
+        <AppliedCard key={i} job={job}></AppliedCard>
+      ))}
     </div>
   );
 };

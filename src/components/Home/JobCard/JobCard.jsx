@@ -25,14 +25,14 @@ const JobCard = ({ job }) => {
       <div className="job-location flex gap-4">
         <div className="flex justify-center items-center gap-2 job-company">
           <span>
-            <img src="../../../public/Icons/Frame-4.png" alt="" />
+            <img src="https://i.ibb.co/hMqFy84/Frame-4.png" alt="" />
           </span>
           {location}
         </div>
         <div className="flex justify-center items-center gap-2 job-company">
           {" "}
           <span>
-            <img src="../../../public/Icons/Frame.png" alt="" />
+            <img src="https://i.ibb.co/1qG5X7m/Frame.png" alt="" />
           </span>{" "}
           Salary : {salary}
         </div>

@@ -48,7 +48,10 @@ const Charts = () => {
     },
   ];
   return (
+    <>
+       <h1 className="text-center text-5xl main-text-color my-4">Charts of Assignment Marks</h1>
     <div className="mx-auto flex items-center justify-center">
+     
       <RadarChart
         cx={350}
         cy={350}
@@ -69,6 +72,7 @@ const Charts = () => {
         />
       </RadarChart>
     </div>
+    </>
   );
 };
 
