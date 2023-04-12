@@ -5,31 +5,30 @@ import AppliedCard from "./AppliedCard";
 
 const AppliedJob = () => {
   const [allJobs, setAllJobs] = useState([]);
-  const [tempAllJobs, setTempAllJobs] = useState([]);
 
-  const loadedData = useLoaderData()
+  const loadedData = useLoaderData();
 
   useEffect(() => {
-    const storedJobs = getShoppingCart()
-    let cartJobs = []
+    const storedJobs = getShoppingCart();
+    let cartJobs = [];
     if (loadedData) {
       for (const id in storedJobs) {
-        const addedJobs =loadedData.jobs&& loadedData.jobs.find((job) => job.id == id)
-        cartJobs.push(addedJobs)
+        const addedJobs =
+          loadedData.jobs && loadedData.jobs.find((job) => job.id == id);
+        console.log(addedJobs);
+
+        cartJobs.push(addedJobs);
       }
-      setAllJobs([...cartJobs])
-      setTempAllJobs([...cartJobs])
+      setAllJobs([...cartJobs]);
     }
-  }, [])
-  // console.log(allJobs,tempAllJobs);
+  }, []);
 
-
-
-  return <div>
-    {
-      allJobs.map(job => <AppliedCard job={job}></AppliedCard>)
-}
-  </div>;
+  return (
+    <div>
+      {allJobs &&
+        allJobs.map((job, i) => <AppliedCard key={i} job={job}></AppliedCard>)}
+    </div>
+  );
 };
 
 export default AppliedJob;

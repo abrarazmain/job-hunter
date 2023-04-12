@@ -9,12 +9,15 @@ const AppliedCard = ({ job }) => {
     remote_or_onsite,
     fulltime_or_parttime,
     salary,
-    id,
+      id,
+    location,
     company_logo,
   } = job;
 
-  return (
-    <div className="my-container">
+    return (
+      <>
+      
+      <div className="my-container">
       <div className="applied-card flex justify-between align-middle items-center px-4">
         <div className="flex justify-center align-middle items-center">
           <div className="img flex justify-center item-center mt-8 ms-4 align-middle ">
@@ -57,7 +60,8 @@ const AppliedCard = ({ job }) => {
           </Link>
         </div>
       </div>
-    </div>
+            </div>
+            </>
   );
 };
 
