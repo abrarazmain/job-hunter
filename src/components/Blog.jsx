@@ -33,6 +33,34 @@ const Blog = () => {
           you can use together to do more advanced stuff in your app.
         </p>
       </div>
+      <div className="text-center my-5 test">
+        <h1 className="bold-text">What is useRef?</h1>
+        <p className="thin-text">
+          useRef is a feature in React that allows you to create a reference to
+          something, which can store information that doesn't disappear when
+          your app changes. It's called a "hook" because it hooks you up with a
+          way to interact with your app's data without affecting how it looks.
+          You can use it to do things like getting the text from an input box or
+          making sure an element gets special attention, such as showing a
+          message or playing a sound. It's really handy when you need to keep
+          track of data that doesn't need to be displayed on the screen but
+          still needs to be important.
+        </p>
+      </div>
+      <div className="text-center my-5 test">
+        <h1 className="bold-text">What is useMemo?</h1>
+        <p className="thin-text">
+          useMemo is like a cool tool in React that can help your app run
+          faster. It's like a memory bank that saves the results of complicated
+          math problems so you don't have to do them over and over again. It's
+          called a "hook" because it hooks you up with a way to optimize your
+          app by avoiding unnecessary calculations. You can use it when you have
+          big calculations that take a lot of time, like when you have a lot of
+          numbers to add or multiply. By using useMemo, you can remember the
+          answers to these calculations and only recalculate them when you need
+          to, which makes your app quicker.
+        </p>
+      </div>
     </div>
   );
 };
