@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import "./jobDetails.css";
+import { addToDB, addToDb, addToDb2, getShoppingCart } from "../../fakedb";
 
-// const test = useParams()
+// use local storage to manage cart data
+const addToDb3 = id => {
+  let shoppingCart = getShoppingCart();
+  // add quantity
+  const quantity = shoppingCart[id];
+  if (!quantity) {
+      shoppingCart[id] = 1;
+  }
+  else {
+      const newQuantity = quantity + 1;
+      shoppingCart[id] = newQuantity;
+  }
+  localStorage.setItem('shopping-cart', JSON.stringify(shoppingCart));
+}
 
 const JobDetails = () => {
   const { jobID } = useParams();
@@ -14,6 +28,7 @@ const JobDetails = () => {
     educational_requirements,
     experiences,
     salary,
+    id,
     job_title,
     contact_information,
     location,
@@ -83,7 +98,12 @@ const JobDetails = () => {
             <span className="thin-text">{location}</span>
           </div>
           <div className="flex items-center justify-center">
-            <button className="main-btn-color px-4 py-2">Apply Now</button>
+            <button
+              onClick={() => addToDb3(id)}
+              className="main-btn-color px-4 py-2"
+            >
+              Apply Now
+            </button>
           </div>
         </div>
       </div>

@@ -8,6 +8,8 @@ import JobCard from "./JobCard/JobCard";
 const Home = () => {
   const { categories } = useLoaderData();
   const [jobs, setJobs] = useState([]);
+  const [lessJobs, setLessJobs] = useState();
+  const [isLess, setIsLess] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -18,6 +20,19 @@ const Home = () => {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetch("jobs.json");
+      const jobs = await data.json();
+      if (jobs) {
+        const newJobs = jobs.jobs.slice(0, 4);
+        setLessJobs(newJobs);
+      }
+    };
+    fetchData();
+  }, [jobs]);
+  console.log(lessJobs);
+  console.log(jobs);
   const newJobs = jobs.jobs;
 
   return (
@@ -42,8 +57,21 @@ const Home = () => {
           need. Its your future
         </p>
         <div className="job-container my-container grid xl:grid-cols-2 md:grid-cols-1">
-          {newJobs &&
+          {isLess &&
+            lessJobs &&
+            lessJobs.map((job) => <JobCard key={job.id} job={job}></JobCard>)}
+          {!isLess &&
+            newJobs &&
             newJobs.map((job) => <JobCard key={job.id} job={job}></JobCard>)}
+        </div>
+        <div className="flex my-container justify-center">
+          {" "}
+          <button
+            onClick={() => setIsLess(!isLess)}
+            className="main-btn-color px-4 py-3"
+          >
+            {isLess ? "See More" : "See Less"}
+          </button>
         </div>
       </div>
     </div>

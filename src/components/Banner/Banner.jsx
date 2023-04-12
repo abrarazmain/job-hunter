@@ -5,7 +5,7 @@ import bannerImg from '../../../public/All Images/P3OLGJ1 copy 1.png'
 const Banner = () => {
   return (
     <div>
-      <div className="px-4 py-6 flex justify-center align-middle  mx-auto  sm:max-w-xl md:max-w-full  md:px-24 lg:px-72 py-6 main-bg">
+      <div className="px-4 py-6 lg:flex justify-center align-middle  mx-auto  sm:max-w-xl md:max-w-full  md:px-24 lg:px-72 py-6 main-bg">
         <div className="my-auto">
           <h1 className="banner-title">
             One Step <br /> Closer To Your{" "}
